@@ -1,0 +1,18 @@
+- import_playbook: shell.yml
+  tags: [ shell ]
+- import_playbook: docker.yml
+  tags: [ docker ]
+- import_playbook: desktop.yml
+  tags: [ desktop ]
+- import_playbook: java.yml
+  tags: [ java ]
+- import_playbook: idea.yml
+  tags: [ idea ]
+- import_playbook: nodejs.yml
+  tags: [ nodejs ]
+- import_playbook: python.yml
+  tags: [ python ]
+- import_playbook: go.yml
+  tags: [ go ]
+- import_playbook: ruby.yml
+  tags: [ ruby ]

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  environment: "{{proxy_env}}"
+
+  roles:
+  - role: geerlingguy.nodejs
+    become: True

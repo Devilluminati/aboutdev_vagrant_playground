@@ -1,0 +1,26 @@
+---
+  - name: Execute Shellcommands
+    hosts: all
+    environment: "{{proxy_env}}"
+    tasks:
+    
+    - name: prevent tty errors
+      shell: sudo apt-get update -y && sudo apt-get install dos2unix -qy && sudo apt-get install httpie -qy
+      
+    - name: set locale
+      shell: ../../scripts/set_locale.sh
+      
+    - name: virtualbox-guest-utils-does-not-exist
+      shell: sudo apt-add-repository multiverse && sudo apt-get update
+      
+    - name: Install xfce and virtualbox additions
+      shell: sudo apt-get install -qy xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+      
+    - name: Permit anyone to start the GUI
+      shell: sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
+      
+    - name: Use LightDM login screen
+      shell: sudo apt-get install -qy lightdm lightdm-gtk-greeter
+      
+    - name: Install a more feature-rich applications menu
+      shell: sudo apt-get install -qy xfce4-whiskermenu-plugin

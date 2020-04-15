@@ -1,0 +1,17 @@
+---
+- src: geerlingguy.docker
+  version: 2.6.0
+- src: geerlingguy.java
+  version: 1.9.7
+- src: gantsign.maven
+  version: 5.4.3
+- src: gantsign.intellij
+  version: 5.10.2
+- src: gantsign.keyboard
+  version: 1.4.0
+- src: geerlingguy.nodejs
+  version: 5.1.0
+- src: gantsign.golang
+  version: 2.2.8
+- src: rvm.ruby
+  version: v2.1.2

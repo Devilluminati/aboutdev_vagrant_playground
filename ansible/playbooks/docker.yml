@@ -1,0 +1,10 @@
+---
+- hosts: all
+  environment: "{{proxy_env}}"
+
+  roles:
+  - role: geerlingguy.docker
+    become: True
+    docker_edition: 'ce'
+    docker_package: "docker-{{ docker_edition }}"
+    docker_package_state: present

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  environment: "{{proxy_env}}"
+
+  roles:
+  - role: gantsign.intellij
+    become: true

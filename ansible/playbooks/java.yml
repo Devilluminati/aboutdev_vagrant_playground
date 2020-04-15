@@ -1,0 +1,12 @@
+---
+- hosts: all
+  environment: "{{proxy_env}}"
+
+  roles:
+  - role: gantsign.maven
+    become: True
+    maven_version: '{{maven_version}}'
+  - role: geerlingguy.java
+    become: true
+  - role: gantsign.intellij
+    become: true
